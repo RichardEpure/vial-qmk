@@ -44,8 +44,6 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LCTL_T(KC_ESC):
         case LCTL_T(KC_DEL):
-        case LT(_SYMBOLS, KC_BSPC):
-            return true;
         default:
             return false;
     }
@@ -53,6 +51,7 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+        case LT(8, KC_PDOT):
         case LT(_SYMBOLS, KC_BSPC):
             return true;
         default:
