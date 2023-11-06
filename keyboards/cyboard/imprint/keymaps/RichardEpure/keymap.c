@@ -28,13 +28,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 layer_invert(_GAMING_TYPE);
                 SEND_STRING(SS_TAP(X_ENT));
-            } 
+            }
             break;
         case ESC_TYPE:
             if (record->event.pressed) {
                 layer_invert(_GAMING_TYPE);
                 SEND_STRING(SS_TAP(X_ESC));
-            } 
+            }
             break;
     }
     return true;
@@ -53,6 +53,7 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT(8, KC_PDOT):
         case LT(_SYMBOLS, KC_BSPC):
+        case LT(_NUMBERS, KC_ENT):
             return true;
         default:
             return false;
