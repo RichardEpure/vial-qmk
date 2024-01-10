@@ -4,7 +4,6 @@
 
 #include "action_layer.h"
 #include "quantum_keycodes.h"
-#include "send_string_keycodes.h"
 #include QMK_KEYBOARD_H
 
 enum layer_names {
@@ -24,20 +23,9 @@ enum custom_keycodes {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case ENT_TYPE:
-            if (record->event.pressed) {
-                layer_invert(_GAMING_TYPE);
-                SEND_STRING(SS_TAP(X_ENT));
-            }
-            break;
-        case ESC_TYPE:
-            if (record->event.pressed) {
-                layer_invert(_GAMING_TYPE);
-                SEND_STRING(SS_TAP(X_ESC));
-            }
-            break;
+        default:
+            return true;
     }
-    return true;
 }
 
 bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
