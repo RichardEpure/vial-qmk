@@ -3,6 +3,8 @@
  */
 
 #include "action_layer.h"
+#include "action_tapping.h"
+#include "keycode.h"
 #include "quantum_keycodes.h"
 #include QMK_KEYBOARD_H
 
@@ -42,6 +44,17 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
         case LT(8, KC_PDOT):
         case LT(_SYMBOLS, KC_BSPC):
         case LT(_NUMBERS, KC_ENT):
+            return true;
+        default:
+            return false;
+    }
+}
+
+bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(_NAVIGATION, KC_Z):
+        case LT(_NAVIGATION, KC_SLSH):
+        case LT(_NAVIGATION, KC_EQL):
             return true;
         default:
             return false;
