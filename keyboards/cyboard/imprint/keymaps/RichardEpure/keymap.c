@@ -53,7 +53,6 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
 bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT(_NAVIGATION, KC_Z):
-        case LT(_NAVIGATION, KC_SLSH):
         case LT(_NAVIGATION, KC_EQL):
             return true;
         default:
