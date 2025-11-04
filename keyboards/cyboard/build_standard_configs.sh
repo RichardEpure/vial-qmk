@@ -2,13 +2,13 @@
 set -euo pipefail
 
 KEYBOARDS=(
-  "imprint/imprint_letters_only"
-  "imprint/imprint_letters_only_full_bottom_row"
+  "imprint/imprint_letters_only_2key_bottom_row"
+  "imprint/imprint_letters_only_5key_bottom_row"
   "imprint/imprint_letters_only_no_bottom_row"
-  "imprint/imprint_number_row"
-  "imprint/imprint_number_row_full_bottom_row"
-  "imprint/imprint_function_row"
-  "imprint/imprint_function_row_full_bottom_row"
+  "imprint/imprint_number_row_2key_bottom_row"
+  "imprint/imprint_number_row_5key_bottom_row"
+  "imprint/imprint_function_row_2key_bottom_row"
+  "imprint/imprint_function_row_5key_bottom_row"
   "dactyl/manuform_letters_only"
   "dactyl/manuform_number_row"
   "dactyl/manuform_function_row"
