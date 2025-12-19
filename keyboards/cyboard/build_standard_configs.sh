@@ -7,6 +7,7 @@ KEYBOARDS=(
   "imprint/imprint_letters_only_no_bottom_row"
   "imprint/imprint_number_row_2key_bottom_row"
   "imprint/imprint_number_row_5key_bottom_row"
+  "imprint/imprint_number_row_5key_bottom_row"
   "imprint/imprint_function_row_2key_bottom_row"
   "imprint/imprint_function_row_5key_bottom_row"
   "dactyl/manuform_letters_only"
