@@ -4,15 +4,19 @@
 * Hardware Supported: Cyboard Imprints and Dactyls
 * Hardware Availability: [Imprint](https://www.cyboard.digital/product-page/imprint), [Dactyl](https://www.cyboard.digital/product-page/custom-dactyl-manuform)
 
+> [!IMPORTANT]
+> use `qmk setup --branch cyboard Cyboard-DigitalTailor/vial-qmk` instead of just `qmk setup` to pull Cyboard's fork of `vial-qmk`.
+
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
 ## Building Firmware
 
 Various sizes and thumb-cluster styles are supported as keymaps. To build the firmware, use the command:
-`make cyboard/{MODEL}/{THUMB STYLE}_{ROWS}:vial`
+`make cyboard/{MODEL}/{THUMB STYLE}_{ROWS}_{BOTTOM_ROW_STYLE}:vial`
 where `{MODEL}` can be `imprint` or `dactyl`
 , `{THUMB STYLE}` can be `imprint`, `manuform`, `dual_arcs`, or `single_arc`
-, and `{ROWS}` can be `function_row`, `number_row`, or `letters_only`
+, `{ROWS}` can be `function_row`, `number_row`, or `letters_only`
+, and for `imprint` only, `{BOTTOM_ROW_STYLE}` can be `5key_bottom_row`, `2key_bottom_row`, or `no_bottom_row`.  `dactyl`s omit this selection and its preceding `_`.
 
 ## Flashing
 
