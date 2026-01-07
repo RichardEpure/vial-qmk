@@ -23,6 +23,14 @@ enum custom_keycodes {
     ESC_TYPE = SAFE_RANGE+1,
 };
 
+void raw_hid_receive_kb(uint8_t *data, uint8_t length) {
+    if (data[0] == 0x87) {
+        layer_move(_GAMING);
+    } else if (data[0] == 0x86) {
+        layer_move(_BASE);
+    }
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         default:
