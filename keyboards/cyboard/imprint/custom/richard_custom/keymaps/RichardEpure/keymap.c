@@ -15,8 +15,8 @@ enum layer_names {
     _NUMBERS,
     _NAVIGATION,
     _GAMING,
+    _HOTKEYS,
     _GAMING_OTHER,
-    _GAMING_TYPE,
     _TRACKBALL = 9
 };
 
@@ -86,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC,KC_Q,                  KC_W,    KC_E,    KC_R,    KC_T,  _______,                                                                                         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,                     KC_NO,
         KC_TAB,KC_A,                  KC_S,    KC_D,    KC_F,    KC_G,  _______,                                                                                         KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,                  KC_QUOT,
         KC_NO, LT(_NAVIGATION, KC_Z), KC_X,    KC_C,    KC_V,    KC_B,                                                                                                   KC_N,    KC_M,    KC_COMM, KC_DOT,  LT(_NAVIGATION, KC_SLSH), KC_ENT,
-                                      KC_LGUI, KC_LALT,     KC_SPC, KC_CAPS, TG(_GAMING_OTHER),                                           TG(_NUMBERS), KC_ENT,  LT(_SYMBOLS, KC_BSPC),  KC_LALT, KC_LGUI,
+                                      KC_LGUI, KC_LALT,     KC_SPC, KC_CAPS, TG(_TRACKBALL),                                           TG(_NUMBERS), KC_ENT,  LT(_SYMBOLS, KC_BSPC),  KC_LALT, KC_LGUI,
                                         LCTL_T(KC_ESC), KC_LSFT, KC_MEH, TG(_GAMING),                                                       RGB_TOG,      KC_TAB,  KC_LSFT,   LCTL_T(KC_DEL)
 
     ),
@@ -131,7 +131,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                    _______, _______, _______, _______,         _______, _______, _______, _______
     ),
 
-    [_GAMING_OTHER] = LAYOUT_fun_custom(
+    [_HOTKEYS] = LAYOUT_fun_custom(
         _______, _______, _______, _______, _______, _______, _______,                                                                     _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______,                                                                     _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______,                                                                     _______, _______, _______, _______, _______, _______,
@@ -140,7 +140,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           _______, _______,      _______, _______, _______, _______,                        TO(_BASE), _______, _______, _______,     _______, _______
     ),
 
-    [_GAMING_TYPE] = LAYOUT_fun_custom(
+    [_GAMING_OTHER] = LAYOUT_fun_custom(
         _______, _______, _______, _______, _______, _______, _______,                  _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______,                  _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______,                  _______, _______, _______, _______, _______, _______,
