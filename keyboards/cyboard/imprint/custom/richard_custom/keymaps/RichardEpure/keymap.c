@@ -45,6 +45,22 @@ void pointing_device_init_user(void) {
     set_auto_mouse_enable(true);
 }
 
+layer_state_t layer_state_set_user(layer_state_t state) {
+    switch (get_highest_layer(remove_auto_mouse_layer(state, true))) {
+        case _GAMING:
+        case _HOTKEYS:
+        case _GAMING_OTHER:
+            state = remove_auto_mouse_layer(state, false);
+            set_auto_mouse_enable(false);
+            break;
+        default:
+            set_auto_mouse_enable(true);
+            break;
+    }
+
+    return state;
+}
+
 /* bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) { */
 /*     switch (keycode) { */
 /*         case LCTL_T(KC_ESC): */
