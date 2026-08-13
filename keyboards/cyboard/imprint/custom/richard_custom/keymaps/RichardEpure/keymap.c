@@ -61,15 +61,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return state;
 }
 
-/* bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) { */
-/*     switch (keycode) { */
-/*         case LCTL_T(KC_ESC): */
-/*         case LCTL_T(KC_DEL): */
-/*         default: */
-/*             return false; */
-/*     } */
-/* } */
-
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT(8, KC_PDOT):
