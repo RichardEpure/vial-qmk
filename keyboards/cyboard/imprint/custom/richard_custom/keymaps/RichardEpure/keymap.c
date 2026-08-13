@@ -16,7 +16,8 @@ enum layer_names {
     _NAVIGATION,
     _GAMING,
     _GAMING_OTHER,
-    _GAMING_TYPE
+    _GAMING_TYPE,
+    _TRACKBALL = 9
 };
 
 enum custom_keycodes {
@@ -37,6 +38,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         default:
             return true;
     }
+}
+
+void pointing_device_init_user(void) {
+    set_auto_mouse_layer(_TRACKBALL);
+    set_auto_mouse_enable(true);
 }
 
 /* bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) { */
@@ -164,7 +170,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                    _______, _______, _______, _______,         _______, _______, _______, _______
     ),
 
-    [9] = LAYOUT_fun_custom(
+    [_TRACKBALL] = LAYOUT_fun_custom(
         _______, _______, _______, _______, _______, _______, _______,                  _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______,                  _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______,                  _______, _______, _______, _______, _______, _______,
