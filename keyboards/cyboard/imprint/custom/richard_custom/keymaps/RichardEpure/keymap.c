@@ -25,11 +25,30 @@ enum custom_keycodes {
     ESC_TYPE = SAFE_RANGE+1,
 };
 
+enum raw_hid_commands {
+    HID_LAYER_BASE         = 0x86,
+    HID_LAYER_GAMING       = 0x87,
+    HID_LAYER_GAMING_OTHER = 0x88,
+};
+
 void raw_hid_receive_kb(uint8_t *data, uint8_t length) {
-    if (data[0] == 0x87) {
-        layer_move(_GAMING);
-    } else if (data[0] == 0x86) {
-        layer_move(_BASE);
+    if (length == 0) {
+        return;
+    }
+
+    switch (data[0]) {
+        case HID_LAYER_BASE:
+            layer_move(_BASE);
+            break;
+        case HID_LAYER_GAMING:
+            layer_move(_GAMING);
+            break;
+        case HID_LAYER_GAMING_OTHER:
+            layer_move(_GAMING_OTHER);
+            break;
+        default:
+            data[0] = id_unhandled;
+            break;
     }
 }
 
